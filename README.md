@@ -4,7 +4,7 @@
 
 ![Demo](demo.png)
 
-**Live Demo:** [she-can-foundation.vercel.app](https://shecanfoundation-form.vercel.app/)  
+**Live Demo:** [shecanfoundation-form.vercel.app](https://shecanfoundation-form.vercel.app/)  
 
 ---
 
