@@ -1,13 +1,14 @@
-# She Can Foundation  Contact & Admin Portal
+# She Can Foundation — Contact & Admin Portal
 
 > A full-stack web application designed to facilitate public inquiries, featuring a public-facing contact form and a secure Admin Dashboard for managing submissions.
 
-** Live Demo:** [she-can-foundation.vercel.app](https://she-can-foundation.vercel.app/)  
-** Admin Panel:** [she-can-foundation.vercel.app/admin](https://she-can-foundation.vercel.app/admin)
+![Demo](demo.png)
+
+**Live Demo:** [she-can-foundation.vercel.app](https://shecanfoundation-form.vercel.app/)  
 
 ---
 
-##  Features
+## Features
 
 ### Public Side
 - Secure public contact form for inquiries
@@ -23,20 +24,20 @@
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | React + Vite |
-| Styling | Tailwind CSS |
-| Backend | Vercel Serverless Functions / Custom API Routes |
-| Database | PostgreSQL (via Supabase) |
-| Authentication | Supabase Auth |
-| Hosting | Vercel |
+| Layer          | Technology                                    |
+|----------------|-----------------------------------------------|
+| Frontend       | React + Vite                                  |
+| Styling        | Tailwind CSS                                  |
+| Backend        | Vercel Serverless Functions / Custom API Routes |
+| Database       | PostgreSQL (via Supabase)                     |
+| Authentication | Supabase Auth                                 |
+| Hosting        | Vercel                                        |
 
 ---
 
-##  Getting Started
+## Getting Started
 
 ### Requirements
 
@@ -48,8 +49,8 @@
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/yourusername/she-can-foundation.git
-cd she-can-foundation
+git clone https://github.com/tiin-tiin/shecanfoundation-form.git
+cd shecanfoundation-form/form
 ```
 
 **2. Install dependencies**
@@ -83,39 +84,39 @@ npm run dev
 
 ---
 
-##  Admin Access
+## Admin Access
 
 Authentication is handled securely via Supabase Auth. You can manage approved admin credentials and user access directly within your Supabase Dashboard under the **Authentication** tab.
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```
 form/
- .vercel/                      # Vercel deployment configuration
- api/                          # Vercel Serverless Functions
- node_modules/                 # Project dependencies
- public/                       # Static assets and images
- src/
-�    assets/                   # Media and asset files
-�    App.css                   # Global application styles
-�    App.jsx                   # Main application routing and state
-�    index.css                 # Base/reset CSS styles
-�    main.jsx                  # React application entry point
- .env                          # Environment variables (not committed)
- .gitignore                    # Git ignore rules
- eslint.config.js              # ESLint configuration
- index.html                    # HTML entry point
- package-lock.json             # Dependency lock file
- package.json                  # Project metadata and scripts
- README.md                     # Project documentation
- vite.config.js                # Vite build configuration
+├── .vercel/              # Vercel deployment configuration
+├── api/                  # Vercel Serverless Functions
+├── node_modules/         # Project dependencies
+├── public/               # Static assets and images
+├── src/
+│   ├── assets/           # Media and asset files
+│   ├── App.css           # Global application styles
+│   ├── App.jsx           # Main application routing and state
+│   ├── index.css         # Base/reset CSS styles
+│   └── main.jsx          # React application entry point
+├── .env                  # Environment variables (not committed)
+├── .gitignore            # Git ignore rules
+├── eslint.config.js      # ESLint configuration
+├── index.html            # HTML entry point
+├── package-lock.json     # Dependency lock file
+├── package.json          # Project metadata and scripts
+├── README.md             # Project documentation
+└── vite.config.js        # Vite build configuration
 ```
 
 ---
 
-##  Serverless API Implementation
+## Serverless API Implementation
 
 The contact form handles data securely via serverless architecture:
 
@@ -127,7 +128,7 @@ The contact form handles data securely via serverless architecture:
 
 ---
 
-##  Acknowledgements & Copyright
+## Acknowledgements & Copyright
 
 © 2026 She Can Foundation Project. All Rights Reserved.
 
