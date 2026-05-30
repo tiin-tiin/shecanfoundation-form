@@ -281,10 +281,7 @@ export default function App() {
       ) : (
           /* ADMIN LOGIN PAGE */
           <main className="max-w-7xl mx-auto px-8 pt-36 pb-20 min-h-screen flex items-center justify-center w-full">
-            <div 
-              className={`p-8 md:p-10 rounded-3xl border overflow-hidden w-full shadow-2xl ${isLoggedIn ? 'max-w-6xl' : 'max-w-md'} ${theme.cardBg}`}
-              style={{ transition: 'max-width 500ms ease, box-shadow 500ms ease' }}
-            >
+            <div className={`p-8 md:p-10 rounded-3xl border border-solid transform-gpu overflow-hidden transition-all duration-500 ease-in-out w-full shadow-2xl ${isLoggedIn ? 'max-w-6xl' : 'max-w-md'} ${theme.cardBg}`}>
 
           {/* Show Dashboard if Logged In, otherwise show Login Form */}
           {isLoggedIn ? (
