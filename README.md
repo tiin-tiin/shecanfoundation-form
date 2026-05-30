@@ -1,4 +1,4 @@
-# She Can Foundation — Contact & Admin Portal
+# She Can Foundation Contact & Admin Portal
 
 > A full-stack web application designed to facilitate public inquiries, featuring a public-facing contact form and a secure Admin Dashboard for managing submissions.
 
@@ -77,10 +77,6 @@ Execute the required SQL schema in your Supabase SQL Editor to create the `submi
 ```bash
 npm run dev
 ```
-
-**7. Visit the app**
-- Public App: [http://localhost:5173](http://localhost:5173)
-- Admin Login: [http://localhost:5173/admin](http://localhost:5173/admin)
 
 ---
 
