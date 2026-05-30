@@ -22,6 +22,22 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // --- SESSION PERSISTENCE ---
+  useEffect(() => {
+    
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsLoggedIn(!!session);
+    });
+
+  
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsLoggedIn(!!session);
+    });
+
+    
+    return () => subscription.unsubscribe();
+  }, []);
+
   
   const handleViewChange = (newView) => {
     setIsLoaded(false); 
