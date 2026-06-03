@@ -235,7 +235,7 @@ export default function App() {
     <img
       src="/hero.avif"
       alt="Community"
-      className="w-full h-[45vh] object-cover object-[center_20%] rounded-2xl shadow-2xl"
+      className="w-full h-[45vh] object-cover object-[center_40%] rounded-2xl shadow-2xl"
     />
     <div className={`md:hidden border-l-4 border-[#fc5b2f] pl-4 py-1 ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>
       <p className="text-sm italic leading-relaxed">
