@@ -140,7 +140,7 @@ export default function App() {
   };
   // --- THEME COLORS ---
   const theme = {
-    bg: isDarkMode ? 'bg-[#0f0f15]' : 'bg-slate-50',
+    bg: isDarkMode ? 'bg-[#0f0f15]' : 'bg-gray-100',
     text: isDarkMode ? 'text-white' : 'text-slate-900',
     navBg: 'bg-[#fc5b2f]', 
     
@@ -206,26 +206,58 @@ export default function App() {
 
       {/* --- MAIN CONTENT --- */}
       {currentView === 'home' ? (
-      <main className="max-w-7xl mx-auto px-8 pt-36 pb-20 min-h-screen flex items-center">
+      <main className="max-w-7xl mx-auto px-8 pt-28 pb-20 min-h-screen flex items-start">
+
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
           
-          {/* LEFT SIDE: Image & Text (Fades in over 1 second) */}
+          {/* LEFT SIDE - desktop only: Contact Us + image + stats */}
           <div className={`space-y-4 md:space-y-6 order-2 md:order-1 transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-            <img 
-              src="/hero.avif" 
-              alt="Community" 
-              className="w-full h-[60vh] md:h-[60vh] lg:max-h-[600px] object-cover shadow-2xl" 
+            
+            {/* Contact Us text - hidden on mobile */}
+            <div className="hidden md:block">
+              <p className="text-xl font-bold uppercase tracking-widest text-[#fc5b2f] mb-2">Contact us</p>
+              <p className={`text-base leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-slate-600'}`}>
+                Have questions about our programs or want to get involved? Drop us a message and our team will get back to you shortly.
+              </p>
+            </div>
+
+            {/* Image */}
+            <img
+              src="/hero.avif"
+              alt="Community"
+              className="w-full h-[45vh] object-cover rounded-2xl shadow-2xl"
             />
-            <p className={`text-lg md:text-xl leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-slate-600'}`}>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-3">
+              {[
+                { num: '500+', label: 'Girls reached' },
+                { num: '12', label: 'Active programs' },
+                { num: '98%', label: 'Completion rate' },
+              ].map(({ num, label }) => (
+                <div key={label} className={`rounded-xl p-3 border min-w-0 ${isDarkMode ? 'bg-[#1a1a24] border-white/5' : 'bg-white border-slate-100'}`}>
+                  <p className="text-lg font-bold text-[#fc5b2f] leading-tight">{num}</p>
+                  <p className={`text-[11px] mt-0.5 leading-tight break-words ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT SIDE: The Form */}
+
+        <div className={`order-1 md:order-2 transition-opacity duration-1000 delay-300 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+
+          <div className="md:hidden mb-3 order-1">
+            <p className="text-xl font-bold uppercase tracking-widest text-[#fc5b2f] mb-2">Contact us</p>
+            <p className={`text-base leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-slate-600'}`}>
               Have questions about our programs or want to get involved? Drop us a message and our team will get back to you shortly.
             </p>
           </div>
-
-          {/* RIGHT SIDE: The Form (Fades in over 1 second, with a slight delay so it appears right after the image) */}
-          <div className={`p-6 md:p-8 rounded-3xl border transition-opacity duration-1000 delay-300 ease-in-out shadow-2xl ${theme.cardBg} order-1 md:order-2 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-            <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
-            
-            {/* Restored Success Message Logic */}
+          <div className={`p-6 md:p-8 rounded-3xl border shadow-2xl ${theme.cardBg}`}>
+          <div className="border-l-4 border-[#fc5b2f] pl-3 mb-6">
+              <h2 className="text-xl font-bold">Send us a message</h2>
+              <p className={`text-sm mt-0.5 ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>We respond within 24 hours</p>
+            </div>
             {status.type === 'success' ? (
               <div className={`p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-center transition-opacity duration-500 ${status.type === 'success' ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="w-16 h-16 bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -289,9 +321,13 @@ export default function App() {
                 >
                   {status.loading ? 'Sending Message...' : 'Send Message'}
                 </button>
+                <p className={`text-xs text-center mt-2 ${isDarkMode ? 'text-gray-500' : 'text-slate-400'}`}>
+                  We respect your privacy and never share your information.
+                </p>
               </form>
             )}
           </div>
+        </div>
         </div>
       </main>
       ) : (
