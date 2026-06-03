@@ -210,46 +210,64 @@ export default function App() {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
           
-          {/* LEFT SIDE - desktop only: Contact Us + image + stats */}
-          <div className={`space-y-4 md:space-y-6 order-2 md:order-1 transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-            
-            {/* Contact Us text - hidden on mobile */}
-            <div className="hidden md:block">
-              <p className="text-xl font-bold uppercase tracking-widest text-[#fc5b2f] mb-2">Contact us</p>
-              <p className={`text-base leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-slate-600'}`}>
-                Have questions about our programs or want to get involved? Drop us a message and our team will get back to you shortly.
-              </p>
-            </div>
+{/* LEFT SIDE */}
+<div className={`space-y-4 md:space-y-6 order-2 md:order-1 transition-opacity duration-1000 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+  
+  {/* Eyebrow - hidden on mobile */}
+  <div className="hidden md:block space-y-4">
+    <div className="flex items-center gap-3">
+      <div className="w-7 h-0.5 bg-[#fc5b2f]"></div>
+      <p className="text-xs font-bold uppercase tracking-[3px] text-[#fc5b2f]">Get in touch</p>
+    </div>
 
-            {/* Image */}
-            <img
-              src="/hero.avif"
-              alt="Community"
-              className="w-full h-[45vh] object-cover rounded-2xl shadow-2xl"
-            />
+    <h1 className={`font-bold text-4xl leading-tight tracking-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+      Let's start a <span className="text-[#fc5b2f] italic">conversation.</span>
+    </h1>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-3">
-              {[
-                { num: '500+', label: 'Girls reached' },
-                { num: '12', label: 'Active programs' },
-                { num: '98%', label: 'Completion rate' },
-              ].map(({ num, label }) => (
-                <div key={label} className={`rounded-xl p-3 border min-w-0 ${isDarkMode ? 'bg-[#1a1a24] border-white/5' : 'bg-white border-slate-100'}`}>
-                  <p className="text-lg font-bold text-[#fc5b2f] leading-tight">{num}</p>
-                  <p className={`text-[11px] mt-0.5 leading-tight break-words ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+    <p className={`text-base leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-slate-600'}`}>
+      Have questions about our programs or want to get involved? Drop us a message and our team will get back to you shortly.
+    </p>
+  </div>
+
+  {/* Image - bottom on mobile (order-last), normal on desktop */}
+    
+  <div className="order-last md:order-none space-y-3">
+    <img
+      src="/hero.avif"
+      alt="Community"
+      className="w-full h-[45vh] object-cover object-[center_20%] rounded-2xl shadow-2xl"
+    />
+    <div className={`md:hidden border-l-4 border-[#fc5b2f] pl-4 py-1 ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>
+      <p className="text-sm italic leading-relaxed">
+        "Together, we can break down barriers and empower women."
+      </p>
+      <span className="text-xs opacity-60 mt-1 block">— Reeta Mishra, Founder & President, She Can Foundation</span>
+    </div>
+  </div>
+
+  {/* Quote */}
+  <div className={`hidden md:block border-l-4 border-[#fc5b2f] pl-4 py-1 ${isDarkMode ? 'text-gray-400' : 'text-slate-500'}`}>
+    <p className="text-sm italic leading-relaxed">
+      "Together, we can break down barriers and empower women."
+    </p>
+    <span className="text-xs opacity-60 mt-1 block">— Reeta Mishra, Founder & President, She Can Foundation</span>
+  </div>
+
+</div>
 
           {/* RIGHT SIDE: The Form */}
 
         <div className={`order-1 md:order-2 transition-opacity duration-1000 delay-300 ease-in-out ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
 
           <div className="md:hidden mb-3 order-1">
-            <p className="text-xl font-bold uppercase tracking-widest text-[#fc5b2f] mb-2">Contact us</p>
-            <p className={`text-base leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-slate-600'}`}>
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-7 h-0.5 bg-[#fc5b2f]"></div>
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#fc5b2f]">Get in touch</p>
+            </div>
+            <h1 className={`font-bold text-3xl leading-tight tracking-tight mb-2 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+              Let's start a <span className="text-[#fc5b2f] italic">conversation.</span>
+            </h1>
+              <p className={`text-base leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-slate-600'}`}>
               Have questions about our programs or want to get involved? Drop us a message and our team will get back to you shortly.
             </p>
           </div>
